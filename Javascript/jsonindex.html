@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script src="index.json"></script>
+    </head>
+    <body>
+        <script>
+            //var data=[{"empID":1001,"empName":"ABCD","empSal":7775644},{"empID":1002,"empName":"AD","empSal":77754},{"empID":1003,"empName":"ACD","empSal":7644}];
+           //data=open(index.json).read();
+           var mydata=data;
+
+           var obj=JSON.parse('{"empID":1001,"empName":"ABCD","address":[{"home":"Bangalore"},{"office":"Pune"}],"empSal":7775644}');   //converting JSON to JS
+            console.log(mydata);
+            console.log(obj);
+            for(emp of mydata)  //similar to iterator in for loop....it will work till the length of the mydata
+            {
+                /*console.log(emp.empID);
+                console.log(emp.empName);
+                console.log(emp.empSal);*/
+
+                console.log(emp.address[0].home);
+            }
+            /*var mydata=eval(data);
+            console.log(mydata);            
+            console.log(mydata[0].empID);
+            console.log(mydata.empName);
+            console.log(mydata.empSal);*/
+            
+            </script>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Start Javascript</title>
+        <script type="text/javascript">
+        var val1=alert("This is where you enter your data");
+        document.write("<br>");
+        document.write("Fill in the details<br><br>");
+
+        function read()
+        {
+            alert("You entered wrong value");
+            //prompt("Please Enter the correct value");
+        }
+        function print()
+        {
+            var b="Hello World!";
+            var val1=prompt("Enter a value 1");
+            var val2=prompt("Enter a value 2");
+            var c=val1+val2;
+            // alert("the result is"+val1+" "+val2+"="+c); this will result in message displayed as string
+            var num1=new Number(val1);  //to read var value not as string but as an number
+            var num2=new Number(val2);  
+            var d=num1+num2;
+            alert("The result is "+num1+"+"+num2+"="+d);
+            document.write("Finished! Thank You"+"<br>");
+        }
+        </script>
+        <meta charset="ISO-8859-1">
+    </head>
+    <body>
+        <form>
+            Name<input type="text" value="Enter Name" name="Name"><br><br>
+            Sex<input type="text" value="Enter Sex" name="sex"><br><br>
+            Age<input type="text" value="Enter Age" name="age"><br><br>
+        </form>
+        <input type="button" onclick="print()" value="submit" name="submit" id="sub1" style="border-radius: 5px; color: green;background-color: yellow">
+        <input type="reset" onclick="read()" value="reset" name="wrong" id="sub2">
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Class Inheritance</title>
+        <script>
+        function Product(id,name,price,description)
+        {
+            this.Productid=id;
+            this.Productname=name;
+            this.Productprice=price;
+            this.Productdescription=description;
+            this.printall=function()
+            {
+                console.log("ID:"+this.Productid+"Name:"+this.Productname+"Price:"+this.Productprice+"Description:"+this.Productdescription);
+            }
+        }
+        function Shipping(address)
+        {
+            this.address=address;
+        }
+        //var id1=prompt();
+        var product1=new Product(787894,"Mobile",15000,"Black");
+        //var id2=prompt();
+        product1.printall();
+        var product2=new Product(12156,"TV",55000,"Grey");
+        product1.address="Pune";
+
+        //direct addition of properties to instances 
+        /*product1.producttype="Computer";
+        product2.productcategory="Electronic";*/
+    
+
+        /*proto way of inheriting on func constructor(doesnt inherits the functions but only properties)
+        Shipping.__proto__=Product;
+        var ship1=new Shipping();
+        ship1.Productid=897;
+        console.log(ship1.Productid);*/
+        
+
+        //proto way of inheriting on instance(it inherits all properties as well as functions)
+        /*ship1=new Shipping();
+        ship1.__proto__=new Product;
+        ship1.Productid=786;
+        console.log(ship1.Productid);
+        ship1.printall();*/
+
+
+        //prototype way of inheriting(it inherits all functions as well as properties)
+        /*Shipping.prototype=new Product;
+        ship2=new Shipping();
+        ship2.Productid=5632;
+        console.log(ship2.printall());
+        ship1.prototype=product1;
+        console.log(ship1.prototype.Productid);*/
+        
+        </script>
+    </head>
+</html>

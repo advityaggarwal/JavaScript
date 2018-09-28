@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Class Inheritance Actual</title>
+        <script>
+        class Product
+        {
+            constructor(id,name,price,description)
+            {
+                this.Productid=id;
+                this.Productname=name;
+                this.Productprice=price;
+                this.Productdescription=description;
+            }
+            /*var printal=function()
+                {
+                    console.log("ID: "+this.Productid+" Name: "+this.Productname+" Price: "+this.Productprice+" Description: "+this.Productdescription);
+                }*/ 
+        }
+        
+        var product3=new Product(123,"asghf",26342,"eth");
+        var product4=new Product(523,"asghf",26342,"eth");
+        Product.prototype.type="";
+        Product.prototype.category="";
+        Product.prototype.printit=function ()
+        {
+            console.log("ID: "+this.Productid+" Name: "+this.Productname+" Price: "+this.Productprice+" Description: "+this.Productdescription+" "+this.category+" "+this.type);
+        }
+        product3.type="abcd";
+        product4.type="abcjfd";
+        product3.category="pqrs";
+        product4.category="psfqrs";
+        product3.printit();
+       // product3.printal();
+        //product4.printal();
+        console.log(product3.category);
+        console.log(product3.type);
+
+        /*class Product1 extends Product
+        {
+            constructor(type)
+            {
+                super(id,name,price,description);
+                this.type=type;
+            }
+        }
+        class Product2 extends Product
+        {
+            constructor(category)
+            {
+                super(id,name,price,description);
+                this.category=category;
+            }
+        }
+        var product3=new Product2(7894,"Mobile",15000,"Black","elec");
+        //product3.category="Elec";
+        //product3.printall();
+        var product4=new Product1(12156,"TV",55000,"Grey","computer");
+        //product4.type="Computer";
+        /*product2.productcategory="Electronic";
+        product1.__proto__=product2;
+        product1.productcategory="Basel";*/
+        </script>
+    </head>
+</html>

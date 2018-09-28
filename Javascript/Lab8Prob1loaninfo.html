@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Loan Amount</title>
+        <script src="loaninfo2.js"></script>
+        <script >
+
+            function compu()
+{
+    
+    var P=parseInt(document.getElementById("principal").value);
+    var rate=parseFloat(document.getElementById("roi").value);
+    var duration=parseInt(document.getElementById("time").value);
+   
+    
+        var R=rate/1200;
+    var N=duration*12;
+    var EMI=(P*R*Math.pow(1+R,N))/(Math.pow(1+R,N)-1);
+    document.getElementById("emi").value=EMI;
+    document.getElementById("amt").value=EMI*N;
+    document.getElementById("int").value=(EMI*N)-P;
+    
+
+}
+
+        </script>
+    </head>
+    <body>
+        <h2>Enter Loan Information:</h2>
+        <form onsubmit="compu();event.preventDefault();">
+            <table>
+                <tr>
+                    <td>1)Amount of the loan(any currency):</td>
+                    <td><input type="number" id="principal" name="principal" min="6000" max="1500000" onkeydown="clear();"></td>
+                </tr>
+                <tr>
+                        <td>2)Annual Percentage Rate of Interest:</td>
+                        <td><input type="text" id="roi" name="roi" onfocus="clear();" ignore={['onfocus']}></td>
+                    </tr>
+                    <tr>
+                            <td>3)Repayment period in years:</td>
+                            <td><input type="text" id="time" name="time" ignore={['onfocus']}></td>
+                        </tr>
+            </table></form>
+            <form id="form1">
+            <input type="submit" value="compute" id="comp" >
+            <table>
+                <tr>
+                    <td>4)Your Monthly Payment will be:</td>
+                    <td><input type="text" id="emi" name="emi"><span id="perr"></span></td>
+                </tr>
+                <tr>
+                        <td>5)Your Total Payment will be:</td>
+                        <td><input type="text" id="amt" name="amt"></td>
+                    </tr>
+                    <tr>
+                            <td>6)Your Total interest payments will be:</td>
+                            <td><input type="text" id="int" name="int"><span id="terr"></span></td>
+                        </tr>
+            </table>
+        </form>
+    </body>
+</html>

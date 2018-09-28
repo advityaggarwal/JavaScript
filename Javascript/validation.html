@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Form Validation and Local Storage</title>
+        <script type="text/javascript">
+        function display()
+        {
+            // get the data from form
+            // alert the display
+            var name=document.forms["register"]["username"].value; //we r getting the username from the input
+            alert(name);   //displaying the username in the popup
+            localStorage.setItem("name",name); //stores the data in the browser
+            localStorage.setItem("pass",password); //stores the data in the browser and also keyname might be diff from the original name
+            var name1=localStorage.getItem("name");    //getting the data back from the browser local storage
+            alert(name1);  //display the data from the local storage
+            localStorage.removeItem("pass")    //removes the data from the browser and its always by the keyname
+            var collection={"name":"aziz","id":"1234"}; //getting the data in form of strings
+            localStorage.setItem("jsonn",JSON.stringify(collection));   //json to string
+            var coll=localStorage.getItem(collection);
+            var data=JSON.parse(coll);  //string to json
+        }
+        var db=opendatabase('mydb','1.0','Test DB',2*1024*1024);
+        var msg;
+        db.transaction(function(tx){
+        tx.executesql('CREATE TABLE IF NOT EXISTS LOGS(username, log)');
+        tx.executesql('CREATE TABLE IF NOT EXISTS LOGS(password, "foobar")');
+        tx.executesql('CREATE TABLE IF NOT EXISTS LOGS(email, "logmsg")');
+        })
+        </script>
+    </head>
+    <body>
+        <form id="register" method="post" onsubmit="display()" name="register"> <!--using 'get' in the method makes all data to be appended in the URL--> 
+            <table align="center">
+                <tr>
+                    <td>
+                        <input type="text" name="username" id="username" placeholder="Enter Username" required><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="password" name="password" id="password" placeholder="Enter Password" pattern="[0-9]{4}[a-z]{4,10}" required><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="email" name="email" id="email" placeholder="Enter Email" required><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="date" name="dob" id="dob" min="" placeholder="Enter DOB" required><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" name="submit" value="Register">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <title>Product details</title>
+        <script>
+            function transact()
+            {
+                var val=document.getElementById("category").value;
+                if(val=="Electronic")
+                {
+                    document.getElementById("prod").innerHTML="<option value="+20000+">TV</option><option value="+30000+">Laptop</option><option value="+10000+">Mobile</option>";
+                }
+                else if(val=="Grocery")
+                {
+                    document.getElementById("prod").innerHTML="<option value="+40+">Soap</option><option value="+90+">Powder</option>";
+                }
+                else
+                {
+                    document.getElementById("prod").innerHTML=("");
+                }
+            }
+           /* function add_option(select_id,option_array,option_array2)
+            {
+                for(var i=0;i<option_array.length;i++)
+                {
+                    document.getElementById(select_id).options[i]=new option(option_array[i]);
+                    document.getElementById(select_id).options[i].value=option_array2[i];
+                }
+            }*/
+            function calc()
+            {
+                var pvalue=document.getElementById("prod").value;
+                var qvalue=document.getElementById("quant").value;
+                document.getElementById("total").value=pvalue*qvalue;
+            }
+            /*function transact2()
+            {
+                var val=document.getElementById("category").value;
+                if(val=="Electronic")
+                {
+                    document.getElementById("prod").options.length=0;
+                    electronics=["Tv","laptop","mobile"];
+                    electronics_val=[20000,30000,10000];
+                    add_option(prod,electronics,electronics_val);
+                }
+                else
+                {
+                    
+                    grocery=["Soap","powder"]; 
+                    grocery_val=[40,90];  
+                    document.getElementById("prod").options.length=0;
+                    add_option(prod,grocery,grocery_val);
+                }
+            }*/
+        </script>
+    </head>
+    <body>
+        <table>
+            <form>
+                <caption><h2>Product Details</h2></caption>
+                <tr>
+                    <td>
+                        Category:
+                    </td>
+                    <td>
+                        <select id="category" name="category" onchange="transact();">
+                            <option value="">Please Select</option>
+                            <option value="Electronic">Electronic</option>
+                            <option value="Grocery">Grocery</option>
+                        </select>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>Product:</td>
+                        <td>
+                            <select id="prod" name="prod">
+                                <option value="">Please Select</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Quantity:
+                        </td>
+                        <td>
+                            <input type="text" id="quant" name="quant">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Total Price:
+                        </td>
+                        <td>
+                            <input type="text" id="total" name="total">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="Submit" onclick="calc();"></td>
+                        <td><input type="reset" value="reset"></td>
+                    </tr>
+            </form>
+        </table>
+    </body>
+</html>

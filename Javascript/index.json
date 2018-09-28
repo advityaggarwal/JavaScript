@@ -1,0 +1,5 @@
+data=[
+    {"empID":1001,"empName":"ABCD","address":[{"home":"Bangalore"},{"office":"Pune"}],"empSal":7775644},
+    {"empID":1002,"empName":"AD","address":[{"home":"Mumbai"},{"office":"Delhi"}],"empSal":77754},
+    {"empID":1003,"empName":"ACD","address":[{"home":"Delhi"},{"office":"Bangalore"}],"empSal":7644}
+]

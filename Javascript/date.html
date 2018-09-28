@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Date Printing</title>
+        <script type="text/javascript">
+        function ddata(){
+            var d=new Date();
+            document.write(d+"<br>");
+            document.write(d.getDate()+"<br>");
+            document.write(d.getMonth()+1+"<br>");
+            document.write(d.getYear()+1900+"<br>");
+            document.write(d.getMinutes()+"<br>");
+            var a=confirm("Do you want to submit");
+        }
+        </script>
+    </head>
+    <body>
+        <input type="button" onclick="ddata()" value="Press ME!" name="click">
+    </body>
+</html>
